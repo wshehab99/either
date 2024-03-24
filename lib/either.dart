@@ -1,4 +1,4 @@
-library either;
+library;
 
 class Either<L, R> {
   final L? left;
@@ -13,3 +13,11 @@ class Either<L, R> {
     }
   }
 }
+
+// ignore: non_constant_identifier_names
+Either Left(l) => Either.left(l);
+Either left(l) => Either.left(l);
+
+// ignore: non_constant_identifier_names
+Either Right(r) => Either.right(r);
+Either right(r) => Either.right(r);
