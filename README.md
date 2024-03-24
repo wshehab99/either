@@ -11,29 +11,56 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages).
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
-
+The Either class is a powerful tool for handling errors and branching logic in functional programming. It represents a computation that can result in one of two possible outcomes: a success value (Right) or a failure value (Left). This abstraction enables developers to elegantly manage error handling and data flow by encapsulating success and failure scenarios into a single type. With Either, Flutter developers can write more robust and predictable code, improving code readability, maintainability, and resilience in their applications.
+<!-- 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+TODO: List what your package can do. Maybe include images, gifs, or videos. -->
 
-## Getting started
+## Installation
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+open pubsbec.yaml file and add this lines under dependencies
+```json
+  either:
+    git:
+      url: https://github.com/wshehab99/either.git
+```
+
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+<!-- TODO: Include short and useful examples for package users. Add longer examples
+to `/example` folder. -->
 
 ```dart
-const like = 'sample';
+// Function to perform division
+Either<String, double> divide(int dividend, int divisor) {
+  if (divisor == 0) {
+    return Left('Cannot divide by zero');
+  } else {
+    return Right(dividend / divisor);
+  }
+}
+
+void main() {
+  // Attempt to divide 10 by 2
+  Either<String, double> result1 = divide(10, 2);
+  result1.fold(
+    (error) => print('Error: $error'),
+    (value) => print('Result: $value'),
+  );
+
+  // Attempt to divide 10 by 0
+  Either<String, double> result2 = divide(10, 0);
+  result2.fold(
+    (error) => print('Error: $error'),
+    (value) => print('Result: $value'),
+  );
+}
 ```
 
-## Additional information
+<!-- ## Additional information
 
 TODO: Tell users more about the package: where to find more information, how to
 contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+from the package authors, and more. -->
