@@ -20,7 +20,7 @@ TODO: List what your package can do. Maybe include images, gifs, or videos. -->
 ## Installation
 
 open pubsbec.yaml file and add this lines under dependencies
-```json
+```yaml
   either:
     git:
       url: https://github.com/wshehab99/either.git
